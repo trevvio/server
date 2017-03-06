@@ -1,14 +1,22 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-import Marker from "./Marker.js";
+import Marker from "./Marker";
+import TimeAgo from "./TimeAgo";
 
 class Share extends React.Component {
     // CONSTRUCTOR
-    constructor(props) {
-        super(props);
-        this.state = {
-            locations: []
-        };
+    constructor(props, context) {
+        super(props, context);
+
+        if (this.context.data) {
+            this.state = this.context.data;
+        } else {
+            this.state = {
+                location: null,
+                last: null,
+                name: null
+            };
+        }
     }
 
     // COMPONENT DID MOUNT
@@ -20,36 +28,51 @@ class Share extends React.Component {
 
         // SOCKET: position
         socket.on("position", data => {
-            var locations = this.state.locations;
-            locations.push({
-                lat: data.latitude,
-                lng: data.longitude
-            });
-
             this.setState({
-                locations: locations
+                location: {
+                    lat: data.latitude,
+                    lng: data.longitude
+                },
+                last: data.last,
+                name: data.name
             });
         });
+
+        // SOCKET: closed
+        socket.on("closed", () => {
+            window.location.reload();
+        });
+
+        if (window) {
+            window.setInterval(this.render.bind(this), 30000);
+        }
     }
 
     // RENDER
     render() {
-        var lastIdx = this.state.locations.length - 1;
-        var center = this.state.locations.length > 0
-            ? this.state.locations[lastIdx]
+        var center = this.state.location !== null
+            ? this.state.location
             : {
                   lat: 50,
                   lng: 7
               };
-        var zoom = this.state.locations.length > 0 ? 12 : 1;
+        var zoom = this.state.location !== null ? 12 : 1;
 
         return (
             <div className="row">
                 <div className={"column column-50 column-offset-25"}>
                     <div className="card">
                         <center>
-                            <h1>Thomas</h1>
-                            <p>Session started: 2 minutes ago</p>
+                            <h1>
+                                <i className="fa fa-user-circle-o" />
+                                {" "}
+                                {this.state.name}
+                            </h1>
+                            <p>
+                                Last position:
+                                {" "}
+                                <TimeAgo time={this.state.last} />
+                            </p>
                         </center>
                         <div className="map">
                             <GoogleMapReact
@@ -60,24 +83,48 @@ class Share extends React.Component {
                                 center={center}
                                 zoom={zoom}
                             >
-                                {this.state.locations.length > 0
+                                {this.state.location !== null
                                     ? <Marker
-                                          lat={
-                                              this.state.locations[lastIdx].lat
-                                          }
-                                          lng={
-                                              this.state.locations[lastIdx].lng
-                                          }
+                                          lat={this.state.location.lat}
+                                          lng={this.state.location.lng}
                                       />
                                     : null}
 
                             </GoogleMapReact>
                         </div>
                     </div>
+                    <center>
+                        <p className="footer">
+                            <small>
+
+                                <a target="_blank" href="/imprint">Imprint</a>
+                                {" "}
+                                ·
+                                {" "}
+                                <a target="_blank" href="/privacy">
+                                    Privacy Policy
+                                </a>
+                                {" "}
+                                ·
+                                {" "}
+                                <a
+                                    target="_blank"
+                                    href="https://github.com/thomasbrueggemann/trevvio"
+                                >
+                                    Code on GitHub
+                                </a>
+
+                            </small>
+                        </p>
+                    </center>
                 </div>
             </div>
         );
     }
 }
+
+Share.contextTypes = {
+    data: React.PropTypes.object.isRequired
+};
 
 export default Share;

@@ -31,7 +31,11 @@ app.post("/", (req, res) => {
             req.body.id,
             JSON.stringify({
                 last: new Date().getTime(),
-                name: req.body.name
+                name: req.body.name,
+                location: {
+                    lat: req.body.latitude,
+                    lng: req.body.longitude
+                }
             })
         );
 
@@ -46,6 +50,7 @@ app.post("/", (req, res) => {
 app.delete("/", (req, res) => {
     if ("id" in req.body) {
         storage.removeItemSync(req.body.id);
+        io.sockets.in(req.body.id).emit("closed", req.body);
     }
 
     return res.status(204).send();
@@ -67,13 +72,17 @@ app.use((req, res) => {
                         redirectLocation.pathname + redirectLocation.search
                     );
             } else if (renderProps) {
+                var title = "Trevvio";
+                var data = {};
+
                 // check if this is a share route and an id exists
                 if ("id" in renderProps.params) {
                     // try to fetch the storage
                     var info = storage.getItemSync(renderProps.params.id);
                     if (info) {
                         // parse JSON
-                        info = JSON.parse(info);
+                        data = JSON.parse(info);
+                        title = data.name + " // Trevvio";
                     } else {
                         var page = swig.renderFile("views/nope.html", {
                             html: html
@@ -91,7 +100,11 @@ app.use((req, res) => {
                 // dump the HTML into a template, lots of ways to do this, but none are
                 // really influenced by React Router, so we're just using a little
                 // function, `renderPage`
-                var page = swig.renderFile("views/index.html", { html: html });
+                var page = swig.renderFile("views/index.html", {
+                    html: html,
+                    title: title,
+                    data: JSON.stringify(data)
+                });
                 return res.status(200).send(page);
             } else {
                 // not found
