@@ -21,14 +21,7 @@ var dependencies = ["alt", "react", "react-dom", "react-router", "underscore"];
  */
 gulp.task("vendor", function() {
     return gulp
-        .src([
-            "bower_components/jquery/dist/jquery.js",
-            "bower_components/bootstrap/dist/js/bootstrap.js",
-            "bower_components/moment/min/moment-with-locales.js",
-            "bower_components/jquery-unveil/jquery.unveil.js",
-            "bower_components/sweetalert2/dist/sweetalert2.min.js",
-            "bower_components/js-cookie/src/js.cookie.js"
-        ])
+        .src([])
         .pipe(concat("vendor.js"))
         .pipe(
             gulpif(

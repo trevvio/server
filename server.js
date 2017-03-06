@@ -9,9 +9,6 @@ import { match, RouterContext } from "react-router";
 import routes from "./app/routes";
 
 var app = express();
-var server = require("http").Server(app);
-var io = require("socket.io")(server);
-
 app.set("port", process.env.PORT || 3000);
 app.use(logger("dev"));
 app.use(bodyParser.json());
@@ -23,7 +20,11 @@ app.use(
 app.use(express.static(path.join(__dirname, "public")));
 
 // POST POSITION
-app.post("/", (req, res) => {});
+app.post("/", (req, res) => {
+    if ("id" in req.body) {
+        io.sockets.in(req.body.id).emit("position", req.body);
+    }
+});
 
 // REACT MIDDLEWARE
 app.use((req, res) => {
@@ -60,6 +61,8 @@ app.use((req, res) => {
     );
 });
 
-app.listen(app.get("port"), () => {
+// EXPRESS
+var server = app.listen(app.get("port"), () => {
     console.log("Express server listening on port " + app.get("port"));
 });
+var io = require("socket.io")(server);
