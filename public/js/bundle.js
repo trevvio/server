@@ -320,7 +320,7 @@ var Share = function (_React$Component) {
                                     "a",
                                     {
                                         target: "_blank",
-                                        href: "https://github.com/thomasbrueggemann/trevvio"
+                                        href: "https://github.com/trevvio"
                                     },
                                     "Code on GitHub"
                                 )
