@@ -7,7 +7,11 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { match, RouterContext } from "react-router";
 import routes from "./app/routes";
+import storage from "node-persist";
 
+storage.initSync();
+
+// APP
 var app = express();
 app.set("port", process.env.PORT || 3000);
 app.use(logger("dev"));
@@ -22,8 +26,29 @@ app.use(express.static(path.join(__dirname, "public")));
 // POST POSITION
 app.post("/", (req, res) => {
     if ("id" in req.body) {
+        // store the request
+        storage.setItemSync(
+            req.body.id,
+            JSON.stringify({
+                last: new Date().getTime(),
+                name: req.body.name
+            })
+        );
+
+        // broadcast via socketio
         io.sockets.in(req.body.id).emit("position", req.body);
     }
+
+    return res.status(204).send();
+});
+
+// DELETE CHANNEL
+app.delete("/", (req, res) => {
+    if ("id" in req.body) {
+        storage.removeItemSync(req.body.id);
+    }
+
+    return res.status(204).send();
 });
 
 // REACT MIDDLEWARE
@@ -42,6 +67,21 @@ app.use((req, res) => {
                         redirectLocation.pathname + redirectLocation.search
                     );
             } else if (renderProps) {
+                // check if this is a share route and an id exists
+                if ("id" in renderProps.params) {
+                    // try to fetch the storage
+                    var info = storage.getItemSync(renderProps.params.id);
+                    if (info) {
+                        // parse JSON
+                        info = JSON.parse(info);
+                    } else {
+                        var page = swig.renderFile("views/nope.html", {
+                            html: html
+                        });
+                        return res.status(200).send(page);
+                    }
+                }
+
                 // `RouterContext` is what the `Router` renders. `Router` keeps these
                 // `props` in its state as it listens to `browserHistory`. But on the
                 // server our app is stateless, so we need to use `match` to
@@ -65,4 +105,11 @@ app.use((req, res) => {
 var server = app.listen(app.get("port"), () => {
     console.log("Express server listening on port " + app.get("port"));
 });
+
+// SOCKET.IO
 var io = require("socket.io")(server);
+io.sockets.on("connection", function(socket) {
+    socket.on("join", function(room) {
+        socket.join(room);
+    });
+});
