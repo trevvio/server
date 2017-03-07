@@ -46,7 +46,9 @@ app.post("/", (req, res) => {
 
     // push the viewer count back
     return res.status(200).send({
-        viewers: io.sockets.adapter.rooms[req.body.id].length
+        viewers: io.sockets.adapter.rooms[req.body.id]
+            ? io.sockets.adapter.rooms[req.body.id].length
+            : 0
     });
 });
 
