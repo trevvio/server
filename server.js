@@ -8,6 +8,7 @@ import { renderToString } from "react-dom/server";
 import { match, RouterContext } from "react-router";
 import routes from "./app/routes";
 import storage from "node-persist";
+import moment from "moment";
 
 storage.initSync();
 
@@ -74,6 +75,7 @@ app.use((req, res) => {
             } else if (renderProps) {
                 var title = "Trevvio";
                 var data = {};
+                var nope = false;
 
                 // check if this is a share route and an id exists
                 if ("id" in renderProps.params) {
@@ -83,12 +85,24 @@ app.use((req, res) => {
                         // parse JSON
                         data = JSON.parse(info);
                         title = data.name + " // Trevvio";
+
+                        if (
+                            moment(data.last).isBefore(
+                                moment().subtract("30", "minutes")
+                            )
+                        ) {
+                            nope = true;
+                        }
                     } else {
-                        var page = swig.renderFile("views/nope.html", {
-                            html: html
-                        });
-                        return res.status(200).send(page);
+                        nope = true;
                     }
+                }
+
+                if (nope === true) {
+                    var page = swig.renderFile("views/nope.html", {
+                        html: html
+                    });
+                    return res.status(200).send(page);
                 }
 
                 // `RouterContext` is what the `Router` renders. `Router` keeps these
