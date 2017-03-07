@@ -1,0 +1,11 @@
+{
+	"apps" : [{
+		"name"        		: "trevvio.com",
+		"script"      		: "./server.js",
+		"exec_interpreter"	: "./node_modules/.bin/babel-node",
+		"watch"       		: true,
+		"env": {
+			"PORT"			: "8979"
+		}
+	}]
+}
