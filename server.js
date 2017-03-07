@@ -44,7 +44,10 @@ app.post("/", (req, res) => {
         io.sockets.in(req.body.id).emit("position", req.body);
     }
 
-    return res.status(204).send();
+    // push the viewer count back
+    return res.status(200).send({
+        viewers: io.sockets.adapter.rooms[req.body.id].length
+    });
 });
 
 // DELETE CHANNEL
