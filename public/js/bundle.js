@@ -247,9 +247,10 @@ var Share = function (_React$Component) {
             return _react2.default.createElement(
                 "div",
                 { className: "row" },
+                _react2.default.createElement("div", { className: "column column-25" }),
                 _react2.default.createElement(
                     "div",
-                    { className: "column column-50 column-offset-25" },
+                    { className: "column" },
                     _react2.default.createElement(
                         "div",
                         { className: "card" },
@@ -327,7 +328,8 @@ var Share = function (_React$Component) {
                             )
                         )
                     )
-                )
+                ),
+                _react2.default.createElement("div", { className: "column column-25" })
             );
         }
     }]);

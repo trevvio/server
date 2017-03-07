@@ -60,7 +60,8 @@ class Share extends React.Component {
 
         return (
             <div className="row">
-                <div className={"column column-50 column-offset-25"}>
+                <div className="column column-25" />
+                <div className="column">
                     <div className="card">
                         <center>
                             <h1>
@@ -118,6 +119,7 @@ class Share extends React.Component {
                         </p>
                     </center>
                 </div>
+                <div className="column column-25" />
             </div>
         );
     }
