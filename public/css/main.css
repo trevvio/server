@@ -6,6 +6,11 @@ body {
 	height:400px;
 }
 
+.launcher {
+	background-image:url("/img/bg.jpg");
+	background-size: cover;
+}
+
 .column-static-text p {
 	text-align: justify;
 }

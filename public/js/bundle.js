@@ -82,12 +82,28 @@ var Home = function (_React$Component) {
     }
 
     _createClass(Home, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            var b = document.getElementsByTagName("body")[0];
+            b.className += " launcher";
+        }
+    }, {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                { className: "row" },
-                "Welcome to Trevvio"
+                null,
+                "Welcome to Trevvio",
+                _react2.default.createElement(
+                    "a",
+                    { href: "/imprint" },
+                    "Imprint"
+                ),
+                _react2.default.createElement(
+                    "a",
+                    { href: "/privacy" },
+                    "Privacy Policy"
+                )
             );
         }
     }]);
