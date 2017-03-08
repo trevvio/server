@@ -241,8 +241,8 @@ var Imprint = function (_React$Component) {
                         "See the",
                         " ",
                         _react2.default.createElement(
-                            _reactRouter.Link,
-                            { to: "/privacy" },
+                            "a",
+                            { href: "/privacy" },
                             "Privacy Policy"
                         ),
                         " ",
@@ -509,7 +509,7 @@ var Privacy = function (_React$Component) {
                                 )
                             )
                         ),
-                        "And that's it."
+                        "And that's it. We don't collect any device identifier or any other personal identifying data."
                     )
                 ),
                 _react2.default.createElement("div", { className: "column column-25" })

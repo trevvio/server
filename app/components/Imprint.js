@@ -46,7 +46,7 @@ class Imprint extends React.Component {
                     <p>
                         See the
                         {" "}
-                        <Link to={"/privacy"}>Privacy Policy</Link>
+                        <a href={"/privacy"}>Privacy Policy</a>
                         {" "}
                         for further details on data collection and protection.
                     </p>

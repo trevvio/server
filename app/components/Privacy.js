@@ -62,7 +62,7 @@ class Privacy extends React.Component {
                                 </td>
                             </tr>
                         </table>
-                        And that's it.
+                        And that's it. We don't collect any device identifier or any other personal identifying data.
                     </p>
                 </div>
                 <div className="column column-25" />
