@@ -64,6 +64,8 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require("react-router");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -83,10 +85,15 @@ var Home = function (_React$Component) {
 
     _createClass(Home, [{
         key: "componentDidMount",
+
+        // COMPONENT DID MOUNT
         value: function componentDidMount() {
             var b = document.getElementsByTagName("body")[0];
             b.className += " launcher";
         }
+
+        // RENDER
+
     }, {
         key: "render",
         value: function render() {
@@ -95,13 +102,13 @@ var Home = function (_React$Component) {
                 null,
                 "Welcome to Trevvio",
                 _react2.default.createElement(
-                    "a",
-                    { href: "/imprint" },
+                    _reactRouter.Link,
+                    { to: "/imprint" },
                     "Imprint"
                 ),
                 _react2.default.createElement(
-                    "a",
-                    { href: "/privacy" },
+                    _reactRouter.Link,
+                    { to: "/privacy" },
                     "Privacy Policy"
                 )
             );
@@ -113,7 +120,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"react":"react"}],3:[function(require,module,exports){
+},{"react":"react","react-router":"react-router"}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
