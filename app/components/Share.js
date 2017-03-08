@@ -42,10 +42,6 @@ class Share extends React.Component {
         socket.on("closed", () => {
             window.location.reload();
         });
-
-        if (window) {
-            window.setInterval(this.render.bind(this), 30000);
-        }
     }
 
     // RENDER

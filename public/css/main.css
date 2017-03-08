@@ -6,6 +6,16 @@ body {
 	height:400px;
 }
 
+.column-static-text p {
+	text-align: justify;
+}
+
+.reverse {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+}
+
 .card {
 	background-color:white;
 	box-shadow: 0 1px 15px #bbb;

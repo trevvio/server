@@ -110,6 +110,177 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require("react-router");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Imprint = function (_React$Component) {
+    _inherits(Imprint, _React$Component);
+
+    function Imprint() {
+        _classCallCheck(this, Imprint);
+
+        return _possibleConstructorReturn(this, (Imprint.__proto__ || Object.getPrototypeOf(Imprint)).apply(this, arguments));
+    }
+
+    _createClass(Imprint, [{
+        key: "render",
+
+        // RENDER
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "row" },
+                _react2.default.createElement("div", { className: "column column-25" }),
+                _react2.default.createElement(
+                    "div",
+                    { className: "column" },
+                    _react2.default.createElement(
+                        "center",
+                        null,
+                        _react2.default.createElement(
+                            _reactRouter.Link,
+                            { to: "/" },
+                            _react2.default.createElement("img", {
+                                src: "/img/android-chrome-512x512.png",
+                                width: "200",
+                                style: { marginTop: 30, marginBottom: 30 }
+                            })
+                        ),
+                        _react2.default.createElement(
+                            "h1",
+                            null,
+                            "Imprint"
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "The following information (Imprint) is required under German law."
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Responsible for this site:"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        _react2.default.createElement(
+                            "span",
+                            { className: "reverse" },
+                            "nnamegg\xFCrB samohT"
+                        ),
+                        _react2.default.createElement("br", null),
+                        _react2.default.createElement(
+                            "span",
+                            { className: "reverse" },
+                            "9 pmakrefoH"
+                        ),
+                        _react2.default.createElement("br", null),
+                        _react2.default.createElement(
+                            "span",
+                            { className: "reverse" },
+                            "nesreiV 15714"
+                        ),
+                        _react2.default.createElement("br", null),
+                        _react2.default.createElement(
+                            "span",
+                            { className: "reverse" },
+                            "moc.oivvert@ih"
+                        ),
+                        _react2.default.createElement("br", null)
+                    ),
+                    _react2.default.createElement(
+                        "center",
+                        null,
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "~"
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Legal disclaimer"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "The creator of this website cannot assume liability for the timeless accuracy and completeness of the information. This website contains links to external websites. As the contents of these third-party websites are beyond my control, I cannot accept liability for them. ResponsibiIity for the contents of the linked pages is always held by the provider or operator of the pages."
+                    ),
+                    _react2.default.createElement(
+                        "center",
+                        null,
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "~"
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Data protection"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "In general, when visiting the website of \u201CTrevvio\", no personal data are saved. No data will be passed on to third parties without your consent. We point out that in regard to unsecured data transmission in the internet (e.g. via email), security cannot be guaranteed. Such data could possibIy be accessed by third parties."
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "See the",
+                        " ",
+                        _react2.default.createElement(
+                            _reactRouter.Link,
+                            { to: "/privacy" },
+                            "Privacy Policy"
+                        ),
+                        " ",
+                        "for further details on data collection and protection."
+                    ),
+                    _react2.default.createElement(
+                        "center",
+                        null,
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "~"
+                        )
+                    )
+                ),
+                _react2.default.createElement("div", { className: "column column-25" })
+            );
+        }
+    }]);
+
+    return Imprint;
+}(_react2.default.Component);
+
+exports.default = Imprint;
+
+},{"react":"react","react-router":"react-router"}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -144,7 +315,214 @@ var Marker = function (_React$Component) {
 
 exports.default = Marker;
 
-},{"react":"react"}],4:[function(require,module,exports){
+},{"react":"react"}],5:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require("react-router");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Privacy = function (_React$Component) {
+    _inherits(Privacy, _React$Component);
+
+    function Privacy() {
+        _classCallCheck(this, Privacy);
+
+        return _possibleConstructorReturn(this, (Privacy.__proto__ || Object.getPrototypeOf(Privacy)).apply(this, arguments));
+    }
+
+    _createClass(Privacy, [{
+        key: "render",
+
+        // RENDER
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "row" },
+                _react2.default.createElement("div", { className: "column column-25" }),
+                _react2.default.createElement(
+                    "div",
+                    { className: "column column-static-text" },
+                    _react2.default.createElement(
+                        "center",
+                        null,
+                        _react2.default.createElement(
+                            _reactRouter.Link,
+                            { to: "/" },
+                            _react2.default.createElement("img", {
+                                src: "/img/android-chrome-512x512.png",
+                                width: "200",
+                                style: { marginTop: 30, marginBottom: 30 }
+                            })
+                        ),
+                        _react2.default.createElement(
+                            "h1",
+                            null,
+                            "Privacy Policy"
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Types of Data collected"
+                    ),
+                    _react2.default.createElement(
+                        "h4",
+                        null,
+                        "Website"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "The website does not collect any personal information of the user."
+                    ),
+                    _react2.default.createElement(
+                        "h4",
+                        null,
+                        "App"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "In order to provide the app service, the user enters a \"name\" (which can be virtually any text) that will be sent, alongside with the geolocation (see section",
+                        " ",
+                        _react2.default.createElement(
+                            "i",
+                            null,
+                            "Geolocation Data"
+                        ),
+                        ") of the user to the service provider. This data (name and last geolocation) is cached for 30 minutes to provide a fast user experience. After 30 minutes, this data is deleted and will not be retained in any way. We do not collect any location data or know where the hell you where last friday."
+                    ),
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Geolocation Data"
+                    ),
+                    _react2.default.createElement(
+                        "h4",
+                        null,
+                        "App"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "The app sends the following information to the server, which will then be passed on to the browsers of users that view a geolocation share channel. This is an example data set:"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        _react2.default.createElement(
+                            "table",
+                            null,
+                            _react2.default.createElement(
+                                "tr",
+                                null,
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    _react2.default.createElement(
+                                        "b",
+                                        null,
+                                        "Name"
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    _react2.default.createElement(
+                                        "b",
+                                        null,
+                                        "Description"
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "tr",
+                                null,
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "name"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "Your name, whatever you choose"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "tr",
+                                null,
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "latitude"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "The latitude value of your current position"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "tr",
+                                null,
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "longitude"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "The longitude value of your current position"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "tr",
+                                null,
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "id"
+                                ),
+                                _react2.default.createElement(
+                                    "td",
+                                    null,
+                                    "A 4-character random string that identifies your location-share channel"
+                                )
+                            )
+                        ),
+                        "And that's it."
+                    )
+                ),
+                _react2.default.createElement("div", { className: "column column-25" })
+            );
+        }
+    }]);
+
+    return Privacy;
+}(_react2.default.Component);
+
+exports.default = Privacy;
+
+},{"react":"react","react-router":"react-router"}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -227,10 +605,6 @@ var Share = function (_React$Component) {
             socket.on("closed", function () {
                 window.location.reload();
             });
-
-            if (window) {
-                window.setInterval(this.render.bind(this), 30000);
-            }
         }
 
         // RENDER
@@ -343,7 +717,7 @@ Share.contextTypes = {
 
 exports.default = Share;
 
-},{"./Marker":3,"./TimeAgo":5,"google-map-react":13,"react":"react"}],5:[function(require,module,exports){
+},{"./Marker":4,"./TimeAgo":7,"google-map-react":15,"react":"react"}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -424,7 +798,7 @@ var TimeAgo = function (_React$Component) {
 
 exports.default = TimeAgo;
 
-},{"moment":30,"react":"react"}],6:[function(require,module,exports){
+},{"moment":32,"react":"react"}],8:[function(require,module,exports){
 "use strict";
 
 var _react = require("react");
@@ -457,7 +831,7 @@ var data = JSON.parse(document.getElementById("data").innerHTML);
     )
 ), document.getElementById("app"));
 
-},{"./components/DataWrapper":1,"./routes":7,"react":"react","react-dom":"react-dom","react-router":"react-router"}],7:[function(require,module,exports){
+},{"./components/DataWrapper":1,"./routes":9,"react":"react","react-dom":"react-dom","react-router":"react-router"}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -478,16 +852,26 @@ var _Share = require("./components/Share");
 
 var _Share2 = _interopRequireDefault(_Share);
 
+var _Imprint = require("./components/Imprint");
+
+var _Imprint2 = _interopRequireDefault(_Imprint);
+
+var _Privacy = require("./components/Privacy");
+
+var _Privacy2 = _interopRequireDefault(_Privacy);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _react2.default.createElement(
     _reactRouter.Route,
     null,
     _react2.default.createElement(_reactRouter.Route, { path: "/", component: _Home2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: "/imprint", component: _Imprint2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: "/privacy", component: _Privacy2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: "/:id", component: _Share2.default })
 );
 
-},{"./components/Home":2,"./components/Share":4,"react":"react","react-router":"react-router"}],8:[function(require,module,exports){
+},{"./components/Home":2,"./components/Imprint":3,"./components/Privacy":5,"./components/Share":6,"react":"react","react-router":"react-router"}],10:[function(require,module,exports){
 'use strict';
 
 var has = Object.prototype.hasOwnProperty;
@@ -778,7 +1162,7 @@ if ('undefined' !== typeof module) {
   module.exports = EventEmitter;
 }
 
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1835,7 +2219,7 @@ GoogleMap.defaultProps = {
 GoogleMap.googleMapLoader = _google_map_loader2.default;
 exports.default = GoogleMap;
 }).call(this,require('_process'))
-},{"./google_map_map":10,"./google_map_markers":11,"./google_map_markers_prerender":12,"./marker_dispatcher":14,"./utils/array_helper":15,"./utils/detect":16,"./utils/detectElementResize":17,"./utils/geo":18,"./utils/isNumber":19,"./utils/is_plain_object":20,"./utils/loaders/google_map_loader":24,"./utils/math/log2":25,"./utils/omit":26,"./utils/pick":27,"./utils/raf":28,"_process":32,"fbjs/lib/shallowEqual":29,"react":"react","react-dom":"react-dom"}],10:[function(require,module,exports){
+},{"./google_map_map":12,"./google_map_markers":13,"./google_map_markers_prerender":14,"./marker_dispatcher":16,"./utils/array_helper":17,"./utils/detect":18,"./utils/detectElementResize":19,"./utils/geo":20,"./utils/isNumber":21,"./utils/is_plain_object":22,"./utils/loaders/google_map_loader":26,"./utils/math/log2":27,"./utils/omit":28,"./utils/pick":29,"./utils/raf":30,"_process":34,"fbjs/lib/shallowEqual":31,"react":"react","react-dom":"react-dom"}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1891,7 +2275,7 @@ var GoogleMapMap = function (_Component) {
 }(_react.Component);
 
 exports.default = GoogleMapMap;
-},{"react":"react"}],11:[function(require,module,exports){
+},{"react":"react"}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2222,7 +2606,7 @@ GoogleMapMarkers.defaultProps = {
   prerender: false
 };
 exports.default = GoogleMapMarkers;
-},{"./utils/omit":26,"fbjs/lib/shallowEqual":29,"react":"react"}],12:[function(require,module,exports){
+},{"./utils/omit":28,"fbjs/lib/shallowEqual":31,"react":"react"}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2259,7 +2643,7 @@ var style = {
   padding: 0,
   position: 'absolute'
 };
-},{"./google_map_markers.js":11,"react":"react"}],13:[function(require,module,exports){
+},{"./google_map_markers.js":13,"react":"react"}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2274,7 +2658,7 @@ var _google_map2 = _interopRequireDefault(_google_map);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _google_map2.default;
-},{"./google_map.js":9}],14:[function(require,module,exports){
+},{"./google_map.js":11}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2334,7 +2718,7 @@ var MarkerDispatcher = function (_EventEmitter) {
 }(_eventemitter2.default);
 
 exports.default = MarkerDispatcher;
-},{"eventemitter3":8}],15:[function(require,module,exports){
+},{"eventemitter3":10}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2352,7 +2736,7 @@ function isArraysEqualEps(arrayA, arrayB, eps) {
   }
   return false;
 }
-},{}],16:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2397,7 +2781,7 @@ function detectBrowser() {
 
   return detectBrowserResult_;
 }
-},{}],17:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 /* eslint-disable */
@@ -2571,7 +2955,7 @@ module.exports = {
   addResizeListener: addResizeListener,
   removeResizeListener: removeResizeListener
 };
-},{}],18:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2726,7 +3110,7 @@ var Geo = function () {
 }();
 
 exports.default = Geo;
-},{"./lib_geo/lat_lng.js":21,"./lib_geo/transform.js":22,"point-geometry":31}],19:[function(require,module,exports){
+},{"./lib_geo/lat_lng.js":23,"./lib_geo/transform.js":24,"point-geometry":33}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2747,7 +3131,7 @@ function isNumber(value) {
   var numberTag = '[object Number]';
   return typeof value === 'number' || isObjectLike(value) && objectToString.call(value) === numberTag;
 }
-},{}],20:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2781,7 +3165,7 @@ function isPlainObject(obj) {
 
   return typeof constructor === 'function' && constructor instanceof constructor && fnToString(constructor) === fnToString(Object);
 }
-},{}],21:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2832,7 +3216,7 @@ LatLng.convert = function (a) {
 };
 
 exports.default = LatLng;
-},{"./wrap.js":23}],22:[function(require,module,exports){
+},{"./wrap.js":25}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3008,7 +3392,7 @@ var Transform = function () {
 }();
 
 exports.default = Transform;
-},{"./lat_lng":21,"./wrap.js":23,"point-geometry":31}],23:[function(require,module,exports){
+},{"./lat_lng":23,"./wrap.js":25,"point-geometry":33}],25:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3019,7 +3403,7 @@ function wrap(n, min, max) {
   var d = max - min;
   return n === max ? n : ((n - min) % d + d) % d + min;
 }
-},{}],24:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3094,7 +3478,7 @@ function googleMapLoader(bootstrapURLKeys) {
   return loadPromise_;
 }
 }).call(this,require('_process'))
-},{"_process":32,"scriptjs":33}],25:[function(require,module,exports){
+},{"_process":34,"scriptjs":35}],27:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3106,7 +3490,7 @@ var log2 = Math.log2 ? Math.log2 : function (x) {
 };
 
 exports.default = log2;
-},{}],26:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3129,7 +3513,7 @@ var omit = function omit(obj, keys) {
 };
 
 exports.default = omit;
-},{}],27:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3146,7 +3530,7 @@ function pick(obj, fn) {
     return result;
   }, {});
 }
-},{}],28:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3162,7 +3546,7 @@ function raf(callback) {
 
   return nativeRaf ? nativeRaf(callback) : window.setTimeout(callback, 1e3 / 60);
 }
-},{}],29:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3230,7 +3614,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],30:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 //! moment.js
 //! version : 2.17.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -7533,7 +7917,7 @@ return hooks;
 
 })));
 
-},{}],31:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 'use strict';
 
 module.exports = Point;
@@ -7666,7 +8050,7 @@ Point.convert = function (a) {
     return a;
 };
 
-},{}],32:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -7848,7 +8232,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],33:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 /*!
   * $script.js JS loader & dependency manager
   * https://github.com/ded/script.js
@@ -7973,4 +8357,4 @@ process.umask = function() { return 0; };
   return $script
 });
 
-},{}]},{},[6]);
+},{}]},{},[8]);
