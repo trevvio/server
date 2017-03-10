@@ -15,6 +15,19 @@ body {
 	text-align: justify;
 }
 
+.column-hero-text {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-text {
+	margin:40px;
+}
+
+.hero-text h1 {
+	color: #333!important;
+	font-size: 5em;
+}
+
 .reverse {
     unicode-bidi: bidi-override;
     direction: rtl;

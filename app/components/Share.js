@@ -122,7 +122,7 @@ class Share extends React.Component {
 }
 
 Share.contextTypes = {
-    data: React.PropTypes.object.isRequired
+    data: React.PropTypes.object
 };
 
 export default Share;

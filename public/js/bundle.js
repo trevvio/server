@@ -89,7 +89,16 @@ var Home = function (_React$Component) {
         // COMPONENT DID MOUNT
         value: function componentDidMount() {
             var b = document.getElementsByTagName("body")[0];
-            b.className += " launcher";
+            b.className = "launcher";
+        }
+
+        // COMPONENT WILL UNMOUNT
+
+    }, {
+        key: "componentWillUnmount",
+        value: function componentWillUnmount() {
+            var b = document.getElementsByTagName("body")[0];
+            b.className = "";
         }
 
         // RENDER
@@ -99,17 +108,50 @@ var Home = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                null,
-                "Welcome to Trevvio",
+                { className: "row" },
                 _react2.default.createElement(
-                    _reactRouter.Link,
-                    { to: "/imprint" },
-                    "Imprint"
+                    "div",
+                    { className: "column" },
+                    _react2.default.createElement("img", { src: "/img/iphone.png", height: "750px" })
                 ),
                 _react2.default.createElement(
-                    _reactRouter.Link,
-                    { to: "/privacy" },
-                    "Privacy Policy"
+                    "div",
+                    { className: "column column-hero-text" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "hero-text" },
+                        _react2.default.createElement(
+                            "center",
+                            null,
+                            _react2.default.createElement("img", {
+                                src: "/img/android-chrome-512x512.png",
+                                width: "175"
+                            }),
+                            _react2.default.createElement(
+                                "h1",
+                                null,
+                                "Trevvio"
+                            ),
+                            _react2.default.createElement(
+                                "p",
+                                null,
+                                "Share your position with your friends instantly."
+                            ),
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { to: "/imprint" },
+                                "Imprint"
+                            ),
+                            " ",
+                            "\xB7",
+                            " ",
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { to: "/privacy" },
+                                "Privacy Policy"
+                            )
+                        )
+                    )
                 )
             );
         }

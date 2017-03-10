@@ -141,7 +141,24 @@ var server = app.listen(app.get("port"), () => {
 // SOCKET.IO
 var io = require("socket.io")(server);
 io.sockets.on("connection", function(socket) {
+    // ON: join
     socket.on("join", function(room) {
         socket.join(room);
+
+        // on every new join, emit the connection count to the app user
+        console.log("viewers", io.sockets.adapter.rooms[room].length);
+        socket.in(room).emit("viewers", io.sockets.adapter.rooms[room].length);
+    });
+
+    // ON: disconnect
+    socket.on("disconnecting", reason => {
+        Object.keys(socket.rooms).forEach(r => {
+            socket
+                .in(r)
+                .emit(
+                    "viewers",
+                    Math.max(0, io.sockets.adapter.rooms[r].length - 1)
+                );
+        });
     });
 });
