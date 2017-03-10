@@ -146,7 +146,6 @@ io.sockets.on("connection", function(socket) {
         socket.join(room);
 
         // on every new join, emit the connection count to the app user
-        console.log("viewers", io.sockets.adapter.rooms[room].length);
         socket.in(room).emit("viewers", io.sockets.adapter.rooms[room].length);
     });
 
