@@ -27,7 +27,13 @@ gulp.task("vendor", function() {
             gulpif(
                 production,
                 uglify({
-                    mangle: false
+                    mangle: true,
+                    compress: {
+                        unused: true,
+                        booleans: true,
+                        loops: true,
+                        properties: true
+                    }
                 })
             )
         )
@@ -49,7 +55,13 @@ gulp.task("browserify-vendor", function() {
                 production,
                 streamify(
                     uglify({
-                        mangle: false
+                        mangle: true,
+                        compress: {
+                            unused: true,
+                            booleans: true,
+                            loops: true,
+                            properties: true
+                        }
                     })
                 )
             )
@@ -73,7 +85,13 @@ gulp.task("browserify", ["browserify-vendor"], function() {
                 production,
                 streamify(
                     uglify({
-                        mangle: false
+                        mangle: true,
+                        compress: {
+                            unused: true,
+                            booleans: true,
+                            loops: true,
+                            properties: true
+                        }
                     })
                 )
             )
@@ -109,6 +127,22 @@ gulp.task("browserify-watch", ["browserify-vendor"], function() {
                 );
             })
             .pipe(source("bundle.js"))
+            .pipe(
+                gulpif(
+                    production,
+                    streamify(
+                        uglify({
+                            mangle: true,
+                            compress: {
+                                unused: true,
+                                booleans: true,
+                                loops: true,
+                                properties: true
+                            }
+                        })
+                    )
+                )
+            )
             .pipe(gulp.dest("public/js/"));
     }
 });
