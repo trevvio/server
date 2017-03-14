@@ -1,4 +1,5 @@
 import express from "express";
+import compression from "compression";
 import path from "path";
 import logger from "morgan";
 import bodyParser from "body-parser";
@@ -17,6 +18,7 @@ var app = express();
 app.set("port", process.env.PORT || 3000);
 app.use(logger("dev"));
 app.use(bodyParser.json());
+app.use(compression());
 app.use(
     bodyParser.urlencoded({
         extended: false
