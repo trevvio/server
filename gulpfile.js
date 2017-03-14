@@ -12,7 +12,24 @@ var uglify = require("gulp-uglify");
 
 var production = process.env.NODE_ENV === "production";
 
-var dependencies = ["alt", "react", "react-dom", "react-router", "underscore"];
+const dependencies = [
+    "alt",
+    "react",
+    "react-dom",
+    "react-router",
+    "underscore"
+];
+
+const compressOptions = {
+    unused: true,
+    booleans: true,
+    loops: true,
+    properties: true,
+    comparisons: true,
+    conditionals: true,
+    dead_code: true,
+    drop_debugger: true
+};
 
 /*
  |--------------------------------------------------------------------------
@@ -28,12 +45,7 @@ gulp.task("vendor", function() {
                 production,
                 uglify({
                     mangle: true,
-                    compress: {
-                        unused: true,
-                        booleans: true,
-                        loops: true,
-                        properties: true
-                    }
+                    compress: compressOptions
                 })
             )
         )
@@ -56,12 +68,7 @@ gulp.task("browserify-vendor", function() {
                 streamify(
                     uglify({
                         mangle: true,
-                        compress: {
-                            unused: true,
-                            booleans: true,
-                            loops: true,
-                            properties: true
-                        }
+                        compress: compressOptions
                     })
                 )
             )
@@ -86,12 +93,7 @@ gulp.task("browserify", ["browserify-vendor"], function() {
                 streamify(
                     uglify({
                         mangle: true,
-                        compress: {
-                            unused: true,
-                            booleans: true,
-                            loops: true,
-                            properties: true
-                        }
+                        compress: compressOptions
                     })
                 )
             )
@@ -133,12 +135,7 @@ gulp.task("browserify-watch", ["browserify-vendor"], function() {
                     streamify(
                         uglify({
                             mangle: true,
-                            compress: {
-                                unused: true,
-                                booleans: true,
-                                loops: true,
-                                properties: true
-                            }
+                            compress: compressOptions
                         })
                     )
                 )
