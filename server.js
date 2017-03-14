@@ -142,6 +142,7 @@ var server = app.listen(app.get("port"), () => {
 
 // SOCKET.IO
 var io = require("socket.io")(server);
+io.enable("browser client gzip");
 io.sockets.on("connection", function(socket) {
     // ON: join
     socket.on("join", function(room) {
