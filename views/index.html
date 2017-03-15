@@ -20,16 +20,17 @@
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 	<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
 	<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="//cdn.rawgit.com/marvelapp/devices.css/master/assets/devices.min.css">
 	<link rel="stylesheet" href="/css/main.css"/>
 </head>
 <body>
 	<div style="display:none" id="data">{{ data }}</div>
 	<div class="container" id="app">{{ html|safe }}</div>
 
-	<script src="/socket.io/socket.io.js"></script>
+	<script src="/socket.io/socket.io.js" async></script>
 	<script src="/js/vendor.bundle.js"></script>
-	<script src="/js/bundle.js"></script>
+	<script src="/js/bundle.js" async></script>
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//cdn.rawgit.com/marvelapp/devices.css/master/assets/devices.min.css">
 </body>
 </html>
