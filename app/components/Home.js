@@ -8,21 +8,6 @@ class Home extends React.Component {
             <div>
                 <div className="row">
                     <div className="column">
-                        <div className="marvel-device iphone6 silver">
-                            <div className="top-bar" />
-                            <div className="sleep" />
-                            <div className="volume" />
-                            <div className="camera" />
-                            <div className="sensor" />
-                            <div className="speaker" />
-                            <div className="screen">
-                                <img src="/img/screen.png" />
-                            </div>
-                            <div className="home" />
-                            <div className="bottom-bar" />
-                        </div>
-                    </div>
-                    <div className="column">
 
                         <div className="hero-text">
                             <center>
@@ -84,6 +69,22 @@ class Home extends React.Component {
                                     </a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div className="column">
+                        <div className="marvel-device iphone6 silver">
+                            <div className="top-bar" />
+                            <div className="sleep" />
+                            <div className="volume" />
+                            <div className="camera" />
+                            <div className="sensor" />
+                            <div className="speaker" />
+                            <div className="screen">
+                                <img src="/img/screen.png" />
+                            </div>
+                            <div className="home" />
+                            <div className="bottom-bar" />
                         </div>
                     </div>
                 </div>
