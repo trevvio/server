@@ -2,21 +2,49 @@ body {
 	background-color: #f5f5f5;
 }
 
-.map {
-	height:400px;
+a {
+	color: #606c76;
+	text-decoration: underline;
 }
 
-.launcher {
-	background-image:url("/img/bg.jpg");
-	background-size: cover;
+a:hover {
+	opacity: 0.5;
+}
+
+.map {
+	height:400px;
 }
 
 .column-static-text p {
 	text-align: justify;
 }
 
-.column-hero-text {
-	background-color: rgba(255, 255, 255, 0.5);
+.border-line {
+	width:200px;
+	border:1px dashed #ddd;
+	margin:40px 0 40px 0;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	margin-bottom: 20px;
+}
+
+.marvel-device {
+	margin:40px 0 40px 0;
+	box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1)!important
+}
+
+.footer-column {
+	text-align: center;
+}
+
+.footer-row {
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .hero-text {
