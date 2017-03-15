@@ -41,7 +41,7 @@ class Home extends React.Component {
                                         {" "}
                                         <u>don't</u>
                                         {" "}
-                                        collect or store any of your data and we're particularly proud of that!
+                                        collect or store any of your data & are particularly proud of that!
                                     </li>
                                 </ul>
 
