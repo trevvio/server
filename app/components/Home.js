@@ -25,12 +25,12 @@ class Home extends React.Component {
 
                                 <ul>
                                     <li>
-                                        <i className="fa fa-users" />
+                                        <i className="fa fa-share" />
                                         {" "}
                                         You decice who you share your location with
                                     </li>
                                     <li>
-                                        <i className="fa fa-clock-o" />
+                                        <i className="fa fa-power-off" />
                                         {" "}
                                         You can stop sharing at any time
                                     </li>
