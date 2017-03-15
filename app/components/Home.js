@@ -35,6 +35,11 @@ class Home extends React.Component {
                                         You can stop sharing at any time
                                     </li>
                                     <li>
+                                        <i className="fa fa-eye" />
+                                        {" "}
+                                        See how many people followed your invitation to watch you
+                                    </li>
+                                    <li>
                                         <i className="fa fa-lock" />
                                         {" "}
                                         We
