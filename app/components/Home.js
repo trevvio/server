@@ -18,7 +18,7 @@ class Home extends React.Component {
                                 <h1>Trevvio</h1>
 
                                 <h4>
-                                    Share your location with your friends, instantly.
+                                    Share your location, instantly. On your way to a meeting or maybe visiting friends?
                                 </h4>
 
                                 <div className="border-line" />
